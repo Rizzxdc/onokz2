@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+      color: #1e293b;
+    }
+    
+    .phone-frame {
+      max-width: 390px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 36px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+      padding: 20px 20px 24px;
+    }
+    
+    /* HEADER */
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .app-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0b3b5c, #1a6b8a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .badge-domain {
+      background: #eef2f6;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #1e4a6b;
+    }
+    
+    .subhead {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4b5b6e;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e9edf2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .subhead span:last-child {
+      background: #d0dfeb;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a4d6e;
+    }
+    
+    /* MENU */
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+    
+    .menu-card {
+      background: #f8fafc;
+      border-radius: 18px;
+      padding: 16px 18px;
+      border: 1px solid #e9edf2;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    
+    .menu-card:hover {
+      background: #f1f5f9;
+      border-color: #bdd3e6;
+      transform: translateX(4px);
+    }
+    
+    .menu-card .label {
+      font-weight: 600;
+      font-size: 16px;
+      color: #0b2b3f;
+    }
+    
+    .menu-card .arrow {
+      color: #7b93ab;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    
+    /* INFO FOOTER */
+    .info-footer {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 12px 8px 6px;
+      border: 1px solid #e4ebf3;
+      margin-top: 6px;
+      text-align: center;
+    }
+    
+    .info-footer .tags {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-weight: 500;
+      color: #3b617c;
+      font-size: 13px;
+      padding: 10px 0 6px;
+    }
+    
+    .info-footer .copyright {
+      font-size: 12px;
+      color: #7b94ab;
+      padding-bottom: 4px;
+    }
+    
+    /* FOOTER GLOBAL */
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #788fa3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e2e9f0;
+      padding-top: 16px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .footer .tag {
+      display: flex;
+      gap: 14px;
+      font-weight: 500;
+      color: #3b617c;
+    }
+    
+    @media (max-width: 420px) {
+      .phone-frame { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-frame">
+    <%- include('partials/header', { domain: domain }) %>
+    
+    <div class="menu-grid">
+      <div class="menu-card" onclick="window.location.href='/jenis-sepeda'">
+        <span class="label">🚵 Jenis-Jenis Sepeda</span>
+        <span class="arrow">›</span>
+      </div>
+      <div class="menu-card" onclick="window.location.href='/tools'">
+        <span class="label">🔧 Tools &amp; Kegunaan</span>
+        <span class="arrow">›</span>
+      </div>
+      <div class="menu-card" onclick="window.location.href='/komponen'">
+        <span class="label">⚙️ Komponen Sepeda</span>
+        <span class="arrow">›</span>
+      </div>
+    </div>
+    
+    <div class="info-footer">
+      <div class="tags">
+        <span>Fast</span>
+        <span>Free</span>
+        <span>Simple</span>
+      </div>
+      <div class="copyright">2026 · Sepeda untuk Semua ❤️</div>
+    </div>
+    
+    <%- include('partials/footer') %>
+  </div>
+</body>
+</html>
