@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+      color: #1e293b;
+    }
+    
+    .phone-frame {
+      max-width: 390px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 36px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+      padding: 20px 20px 24px;
+    }
+    
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .app-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0b3b5c, #1a6b8a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .badge-domain {
+      background: #eef2f6;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #1e4a6b;
+    }
+    
+    .subhead {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4b5b6e;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e9edf2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .subhead span:last-child {
+      background: #d0dfeb;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a4d6e;
+    }
+    
+    .content-card {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 18px 16px 16px;
+      margin: 12px 0 16px;
+      border: 1px solid #e4ebf3;
+    }
+    
+    .content-title {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 14px;
+      color: #103a52;
+    }
+    
+    .item-list {
+      list-style: none;
+      margin: 6px 0 4px;
+    }
+    
+    .item-list li {
+      padding: 12px 8px;
+      border-bottom: 1px solid #e2e9f0;
+      font-weight: 500;
+      color: #1a4058;
+    }
+    
+    .item-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .action-bar {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      color: #2a6b8f;
+      text-decoration: none;
+      font-size: 14px;
+      background: #e9f0f7;
+      padding: 8px 18px;
+      border-radius: 40px;
+      transition: 0.15s;
+      border: 1px solid transparent;
+    }
+    
+    .back-link:hover {
+      background: #d6e4f0;
+      border-color: #b6cee2;
+    }
+    
+    .year {
+      font-size: 12px;
+      color: #7b94ab;
+    }
+    
+    .tags {
+      display: flex;
+      gap: 20px;
+      font-weight: 500;
+      color: #3b617c;
+      font-size: 13px;
+      margin-top: 10px;
+      padding-top: 12px;
+      border-top: 1px solid #dce6ef;
+    }
+    
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #788fa3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e2e9f0;
+      padding-top: 16px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .footer .tag {
+      display: flex;
+      gap: 14px;
+      font-weight: 500;
+      color: #3b617c;
+    }
+    
+    @media (max-width: 420px) {
+      .phone-frame { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-frame">
+    <%- include('../partials/header', { domain: domain }) %>
+    
+    <div class="content-card">
+      <h2 class="content-title">🚲 Jenis Sepeda</h2>
+      
+      <ul class="item-list">
+        <li>Sepeda Gunung</li>
+        <li>Sepeda BMX</li>
+        <li>Sepeda Lipat</li>
+        <li>Sepeda Fixie</li>
+        <li>Sepeda Coster</li>
+      </ul>
+      
+      <div class="action-bar">
+        <a href="/" class="back-link">← Kembali ke Menu Utama</a>
+        <span class="year">⏱️ 2026</span>
+      </div>
+      
+      <div class="tags">
+        <span>Fast</span>
+        <span>Free</span>
+        <span>Simple</span>
+      </div>
+    </div>
+    
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+</html>

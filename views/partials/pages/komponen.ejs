@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+      color: #1e293b;
+    }
+    
+    .phone-frame {
+      max-width: 390px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 36px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+      padding: 20px 20px 24px;
+    }
+    
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .app-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0b3b5c, #1a6b8a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .badge-domain {
+      background: #eef2f6;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #1e4a6b;
+    }
+    
+    .subhead {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4b5b6e;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e9edf2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .subhead span:last-child {
+      background: #d0dfeb;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a4d6e;
+    }
+    
+    .content-card {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 18px 16px 16px;
+      margin: 12px 0 16px;
+      border: 1px solid #e4ebf3;
+    }
+    
+    .content-title {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 4px;
+      color: #103a52;
+    }
+    
+    .content-desc {
+      font-size: 14px;
+      color: #2a4d69;
+      margin-bottom: 12px;
+    }
+    
+    .part-list {
+      list-style: none;
+      margin: 6px 0 4px;
+    }
+    
+    .part-list li {
+      padding: 12px 8px;
+      border-bottom: 1px solid #e2e9f0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .part-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .part-list li strong {
+      color: #0f3b54;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    
+    .part-list li span {
+      color: #1f405a;
+      font-size: 14px;
+    }
+    
+    .action-bar {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      color: #2a6b8f;
+      text-decoration: none;
+      font-size: 14px;
+      background: #e9f0f7;
+      padding: 8px 18px;
+      border-radius: 40px;
+      transition: 0.15s;
+      border: 1px solid transparent;
+    }
+    
+    .back-link:hover {
+      background: #d6e4f0;
+      border-color: #b6cee2;
+    }
+    
+    .year {
+      font-size: 12px;
+      color: #7b94ab;
+    }
+    
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #788fa3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e2e9f0;
+      padding-top: 16px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .footer .tag {
+      display: flex;
+      gap: 14px;
+      font-weight: 500;
+      color: #3b617c;
+    }
+    
+    @media (max-width: 420px) {
+      .phone-frame { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-frame">
+    <%- include('../partials/header', { domain: domain }) %>
+    
+    <div class="content-card">
+      <h2 class="content-title">⚙️ Sparepart Sepeda</h2>
+      <p class="content-desc">Berikut bagian-bagian penting yang membentuk sepeda secara utuh:</p>
+      
+      <ul class="part-list">
+        <li>
+          <strong>Rangka</strong>
+          <span>Kerangka utama yang menopang seluruh beban dan komponen lain.</span>
+        </li>
+        <li>
+          <strong>Sistem Penggerak</strong>
+          <span>Terdiri dari pedal, engkol, rantai, gir depan dan gir belakang.</span>
+        </li>
+        <li>
+          <strong>Sistem Pengereman</strong>
+          <span>Tuas rem, kabel rem, kampas rem, dan cakram piringan.</span>
+        </li>
+        <li>
+          <strong>Bagian Roda</strong>
+          <span>Velg, jari-jari, ban dalam serta ban luar.</span>
+        </li>
+        <li>
+          <strong>Bagian Lainnya</strong>
+          <span>Sadel, stang, pegangan, spakbor, dan standar.</span>
+        </li>
+      </ul>
+      
+      <div class="action-bar">
+        <a href="/" class="back-link">← Kembali</a>
+        <span class="year">2026 · Sepeda untuk Semua ❤️</span>
+      </div>
+    </div>
+    
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+</html>
