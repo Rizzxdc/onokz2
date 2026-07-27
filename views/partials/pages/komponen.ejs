@@ -186,7 +186,16 @@
 </head>
 <body>
   <div class="phone-frame">
-    <%- include('../partials/header', { domain: domain }) %>
+    <!-- HEADER LANGSUNG -->
+    <div class="app-header">
+      <h1>🚲 Edukasi Sepeda</h1>
+      <div class="badge-domain"><%= domain || 'onok2.vercel.app' %></div>
+    </div>
+
+    <div class="subhead">
+      <span>📘 Pilih materi favoritmu</span>
+      <span>#sepeda</span>
+    </div>
     
     <div class="content-card">
       <h2 class="content-title">⚙️ Sparepart Sepeda</h2>
@@ -221,7 +230,15 @@
       </div>
     </div>
     
-    <%- include('../partials/footer') %>
+    <!-- FOOTER LANGSUNG -->
+    <div class="footer">
+      <span>⏱️ 2026</span>
+      <div class="tag">
+        <span>🚲</span>
+        <span>❤️</span>
+      </div>
+      <small>Sepeda untuk Semua</small>
+    </div>
   </div>
 </body>
 </html>
