@@ -13,8 +13,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  },
-  "keywords": ["sepeda", "edukasi", "ejs"],
-  "author": "Rizzxdc",
-  "license": "MIT"
+  }
 }
